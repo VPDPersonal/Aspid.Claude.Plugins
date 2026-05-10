@@ -7,7 +7,7 @@
 > стабильность — фиксируйте конкретный коммит или тег.
 
 Плагин для Claude Code, который помогает агенту корректно работать с Unity-пакетом
-[**Aspid.FastTools**](https://github.com/VladislavPanin/Aspid.FastTools)
+[**Aspid.FastTools**](https://github.com/VPDPersonal/Aspid.FastTools)
 (`com.aspid.fasttools`) внутри ваших собственных Unity-проектов.
 
 В составе плагина — **3 скилла**, которые срабатывают автоматически на типовые запросы:
@@ -38,13 +38,13 @@
 ### Вариант B — напрямую из Git
 
 ```
-/plugin install github:VladislavPanin/Aspid.FastTools.Claude
+/plugin install github:VPDPersonal/Aspid.FastTools.Claude
 ```
 
 ### Вариант C — git submodule (для контрибьюторов)
 
 ```bash
-git submodule add https://github.com/VladislavPanin/Aspid.FastTools.Claude.git \
+git submodule add https://github.com/VPDPersonal/Aspid.FastTools.Claude.git \
     .claude/plugins/aspid-fasttools
 ```
 

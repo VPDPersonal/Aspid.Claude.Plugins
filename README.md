@@ -7,7 +7,7 @@
 > if you need stability.
 
 A Claude Code plugin that helps Claude Code work correctly with the
-[**Aspid.FastTools**](https://github.com/VladislavPanin/Aspid.FastTools) Unity package
+[**Aspid.FastTools**](https://github.com/VPDPersonal/Aspid.FastTools) Unity package
 (`com.aspid.fasttools`) inside your own Unity projects.
 
 The plugin ships **3 skills** that activate automatically when you ask Claude Code
@@ -39,13 +39,13 @@ not consumers.
 ### Option B — Direct from Git
 
 ```
-/plugin install github:VladislavPanin/Aspid.FastTools.Claude
+/plugin install github:VPDPersonal/Aspid.FastTools.Claude
 ```
 
 ### Option C — Git submodule (for contributors)
 
 ```bash
-git submodule add https://github.com/VladislavPanin/Aspid.FastTools.Claude.git \
+git submodule add https://github.com/VPDPersonal/Aspid.FastTools.Claude.git \
     .claude/plugins/aspid-fasttools
 ```
 
