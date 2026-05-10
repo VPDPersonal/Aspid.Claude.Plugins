@@ -1,5 +1,7 @@
 # Aspid.FastTools.Claude — Claude Code plugin
 
+[![Latest release](https://img.shields.io/github/v/release/VPDPersonal/Aspid.FastTools.Claude?include_prereleases&label=release&sort=semver)](https://github.com/VPDPersonal/Aspid.FastTools.Claude/releases)
+
 [Русская версия](README_RU.md)
 
 > **Alpha (`0.1.0`)** — skill triggers, descriptions and structure may change between

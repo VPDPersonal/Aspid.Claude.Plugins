@@ -1,5 +1,7 @@
 # Aspid.FastTools.Claude — плагин для Claude Code
 
+[![Latest release](https://img.shields.io/github/v/release/VPDPersonal/Aspid.FastTools.Claude?include_prereleases&label=release&sort=semver)](https://github.com/VPDPersonal/Aspid.FastTools.Claude/releases)
+
 [English version](README.md)
 
 > **Альфа (`0.1.0`)** — триггеры, описания и структура скиллов могут меняться между
