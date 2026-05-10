@@ -1,6 +1,5 @@
 # Aspid.FastTools.Claude — плагин для Claude Code
 
-![](https://img.shields.io/badge/2022.3%2B-000000?style=flat&logo=unity&logoColor=white&color=4fa35d)
 [![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.FastTools.Claude?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.FastTools.Claude/releases)
 [![License](https://img.shields.io/github/license/VPDPersonal/Aspid.FastTools.Claude?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
 
