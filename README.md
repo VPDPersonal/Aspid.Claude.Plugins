@@ -19,10 +19,6 @@ to do common tasks:
 | `aspid-profiler-marker` | "profile this method", "add `this.Marker()`", "instrument with ProfilerMarker" |
 | `aspid-visual-element-fluent` | "build editor UI with UIToolkit", "use fluent `VisualElement`", "style this `VisualElement`" |
 
-The plugin **does not** include skills for internal-only conventions (USS BEM grammar,
-custom `AspidStyles` palette) — those are for contributors of the package itself,
-not consumers.
-
 ## Requirements
 
 - Unity 2022.3+
@@ -30,23 +26,8 @@ not consumers.
 
 ## Installation
 
-### Option A — Claude Code plugin marketplace
-
-```
-/plugin install aspid-fasttools
-```
-
-### Option B — Direct from Git
-
 ```
 /plugin install github:VPDPersonal/Aspid.FastTools.Claude
-```
-
-### Option C — Git submodule (for contributors)
-
-```bash
-git submodule add https://github.com/VPDPersonal/Aspid.FastTools.Claude.git \
-    .claude/plugins/aspid-fasttools
 ```
 
 ## What's inside

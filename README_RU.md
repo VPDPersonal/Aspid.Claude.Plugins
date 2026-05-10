@@ -18,10 +18,6 @@
 | `aspid-profiler-marker` | «профайлинг этого метода», «добавь `this.Marker()`», «инструментируй ProfilerMarker'ом» |
 | `aspid-visual-element-fluent` | «собери редактор-UI на UIToolkit», «используй fluent `VisualElement`», «застилизуй этот `VisualElement`» |
 
-Плагин **не включает** скиллы для внутренних конвенций пакета (USS BEM грамматика,
-кастомная палитра `AspidStyles`) — они нужны контрибьюторам самого пакета, а не его
-потребителям.
-
 ## Требования
 
 - Unity 2022.3+
@@ -29,23 +25,8 @@
 
 ## Установка
 
-### Вариант A — через marketplace плагинов Claude Code
-
-```
-/plugin install aspid-fasttools
-```
-
-### Вариант B — напрямую из Git
-
 ```
 /plugin install github:VPDPersonal/Aspid.FastTools.Claude
-```
-
-### Вариант C — git submodule (для контрибьюторов)
-
-```bash
-git submodule add https://github.com/VPDPersonal/Aspid.FastTools.Claude.git \
-    .claude/plugins/aspid-fasttools
 ```
 
 ## Что внутри
