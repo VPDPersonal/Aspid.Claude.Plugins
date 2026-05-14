@@ -11,7 +11,7 @@ specific commit or tag if you need stability.
 
 ## [Unreleased]
 
-## [0.2.0] — 2026-05-14
+## [0.2.0-alpha] — 2026-05-14
 
 ### Fixed
 - `aspid-visual-element-fluent`: removed nonexistent `params string[]` overloads of

@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "aspid-fasttools",
-      "version": "0.2.0",
+      "version": "0.2.0-alpha",
       "description": "Claude Code skills for the Aspid.FastTools Unity package (com.aspid.fasttools). Helps Claude Code generate correct UniqueId structs, ProfilerMarker call sites, and fluent VisualElement code in projects that consume the package.",
       "author": {
         "name": "Vladislav Panin",
