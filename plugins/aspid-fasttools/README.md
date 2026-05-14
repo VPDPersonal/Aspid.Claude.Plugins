@@ -4,7 +4,7 @@
 
 [Русская версия](README_RU.md)
 
-> **Alpha (`0.1.0`)** — skill triggers, descriptions and structure may change between
+> **Alpha (`0.2.0`)** — skill triggers, descriptions and structure may change between
 > minor versions as real-world usage feedback comes in. Pin a specific commit or tag
 > if you need stability.
 
