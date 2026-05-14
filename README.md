@@ -7,7 +7,7 @@
 
 Personal [Claude Code](https://docs.claude.com/en/docs/claude-code) marketplace by Vladislav Panin.
 
-A small set of plugins built around the [**Aspid.FastTools**](https://github.com/VPDPersonal/Aspid.FastTools) Unity package and related Unity workflows. Plugins live in `plugins/<name>/`; the marketplace manifest is at `.claude-plugin/marketplace.json`.
+A shared marketplace for Claude Code plugins across the **Aspid** package family and adjacent workflows — not tied to any single package. Each Aspid package (or general-purpose tooling) can ship its own plugin here. Plugins live in `plugins/<name>/`; the marketplace manifest is at `.claude-plugin/marketplace.json`.
 
 ## Installation
 
@@ -31,9 +31,11 @@ Or browse the marketplace UI:
 
 ## Plugins
 
-| Plugin | What it does |
-|---|---|
-| [`aspid-fasttools`](plugins/aspid-fasttools/README.md) | Claude Code skills for the Aspid.FastTools Unity package: scaffolding `IId`/`[UniqueId]` structs (`aspid-id-struct`), inserting `this.Marker()` profiler call sites (`aspid-profiler-marker`), and building editor UI with the fluent `VisualElement` extensions (`aspid-visual-element-fluent`). |
+The marketplace hosts plugins for any Aspid package (and related general-purpose Claude Code tooling). The list grows as new packages get their own plugin.
+
+| Plugin | Target package | What it does |
+|---|---|---|
+| [`aspid-fasttools`](plugins/aspid-fasttools/README.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Claude Code skills for the Aspid.FastTools Unity package: scaffolding `IId`/`[UniqueId]` structs (`aspid-id-struct`), inserting `this.Marker()` profiler call sites (`aspid-profiler-marker`), and building editor UI with the fluent `VisualElement` extensions (`aspid-visual-element-fluent`). |
 
 ## Repository layout
 
@@ -42,12 +44,13 @@ Aspid.Claude.Plugins/
 ├── .claude-plugin/
 │   └── marketplace.json     # marketplace manifest (name, description, plugin list)
 ├── plugins/
-│   └── aspid-fasttools/
-│       ├── .claude-plugin/
-│       │   └── plugin.json  # plugin metadata
-│       ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
-│       ├── README.md
-│       └── README_RU.md
+│   ├── aspid-fasttools/     # plugin for the Aspid.FastTools package
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json  # plugin metadata
+│   │   ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
+│   │   ├── README.md
+│   │   └── README_RU.md
+│   └── <other-plugin>/      # plugins for other Aspid packages or general tooling
 ├── LICENSE
 └── README.md
 ```

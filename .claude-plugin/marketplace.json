@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "aspid-claude-plugins",
-  "description": "Claude Code marketplace by Vladislav Panin — plugins around the Aspid.FastTools Unity package and related Unity workflows.",
+  "description": "Claude Code marketplace by Vladislav Panin — shared marketplace for plugins across the Aspid package family and related general-purpose tooling.",
   "owner": {
     "name": "Vladislav Panin",
     "email": "vpd.aspid@gmail.com"

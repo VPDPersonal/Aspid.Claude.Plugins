@@ -7,7 +7,7 @@
 
 Личный маркетплейс плагинов для [Claude Code](https://docs.claude.com/en/docs/claude-code) от Vladislav Panin.
 
-Набор плагинов вокруг Unity-пакета [**Aspid.FastTools**](https://github.com/VPDPersonal/Aspid.FastTools) и связанных Unity-воркфлоу. Плагины лежат в `plugins/<имя>/`, манифест маркетплейса — в `.claude-plugin/marketplace.json`.
+Общий маркетплейс плагинов Claude Code для семейства пакетов **Aspid** и смежных воркфлоу — не привязан к какому-то одному пакету. Каждый пакет Aspid (или универсальная утилита) может поставлять сюда свой плагин. Плагины лежат в `plugins/<имя>/`, манифест маркетплейса — в `.claude-plugin/marketplace.json`.
 
 ## Установка
 
@@ -31,9 +31,11 @@
 
 ## Плагины
 
-| Плагин | Что делает |
-|---|---|
-| [`aspid-fasttools`](plugins/aspid-fasttools/README_RU.md) | Скиллы Claude Code для пакета Aspid.FastTools: создание `IId`/`[UniqueId]`-структур (`aspid-id-struct`), вставка `this.Marker()` для профайлинга (`aspid-profiler-marker`) и сборка редактор-UI на fluent-расширениях `VisualElement` (`aspid-visual-element-fluent`). |
+В маркетплейсе живут плагины для любых пакетов Aspid (и смежного универсального тулинга для Claude Code). Список будет расти по мере появления плагинов для новых пакетов.
+
+| Плагин | Целевой пакет | Что делает |
+|---|---|---|
+| [`aspid-fasttools`](plugins/aspid-fasttools/README_RU.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Скиллы Claude Code для пакета Aspid.FastTools: создание `IId`/`[UniqueId]`-структур (`aspid-id-struct`), вставка `this.Marker()` для профайлинга (`aspid-profiler-marker`) и сборка редактор-UI на fluent-расширениях `VisualElement` (`aspid-visual-element-fluent`). |
 
 ## Структура репозитория
 
@@ -42,12 +44,13 @@ Aspid.Claude.Plugins/
 ├── .claude-plugin/
 │   └── marketplace.json     # манифест маркетплейса (имя, описание, список плагинов)
 ├── plugins/
-│   └── aspid-fasttools/
-│       ├── .claude-plugin/
-│       │   └── plugin.json  # метаданные плагина
-│       ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
-│       ├── README.md
-│       └── README_RU.md
+│   ├── aspid-fasttools/     # плагин для пакета Aspid.FastTools
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json  # метаданные плагина
+│   │   ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
+│   │   ├── README.md
+│   │   └── README_RU.md
+│   └── <other-plugin>/      # плагины для других пакетов Aspid или универсального тулинга
 ├── LICENSE
 └── README.md
 ```
