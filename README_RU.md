@@ -1,7 +1,7 @@
-# Aspid.FastTools.Claude
+# Aspid.Claude.Plugins
 
-[![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.FastTools.Claude?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.FastTools.Claude/releases)
-[![License](https://img.shields.io/github/license/VPDPersonal/Aspid.FastTools.Claude?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
+[![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.Claude.Plugins?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.Claude.Plugins/releases)
+[![License](https://img.shields.io/github/license/VPDPersonal/Aspid.Claude.Plugins?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
 
 [English version](README.md)
 
@@ -14,13 +14,13 @@
 Добавьте репозиторий как маркетплейс в Claude Code:
 
 ```sh
-/plugin marketplace add VPDPersonal/Aspid.FastTools.Claude
+/plugin marketplace add VPDPersonal/Aspid.Claude.Plugins
 ```
 
 Установите конкретный плагин:
 
 ```sh
-/plugin install aspid-fasttools@aspid-fasttools-claude
+/plugin install aspid-fasttools@aspid-claude-plugins
 ```
 
 Или откройте UI маркетплейса:
@@ -38,7 +38,7 @@
 ## Структура репозитория
 
 ```
-Aspid.FastTools.Claude/
+Aspid.Claude.Plugins/
 ├── .claude-plugin/
 │   └── marketplace.json     # манифест маркетплейса (имя, описание, список плагинов)
 ├── plugins/

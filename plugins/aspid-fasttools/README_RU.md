@@ -1,7 +1,7 @@
-# Aspid.FastTools.Claude — плагин для Claude Code
+# aspid-fasttools — плагин для Claude Code
 
-[![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.FastTools.Claude?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.FastTools.Claude/releases)
-[![License](https://img.shields.io/github/license/VPDPersonal/Aspid.FastTools.Claude?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
+[![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.Claude.Plugins?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.Claude.Plugins/releases)
+[![License](https://img.shields.io/github/license/VPDPersonal/Aspid.Claude.Plugins?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
 
 [English version](README.md)
 
@@ -28,11 +28,11 @@
 
 ## Установка
 
-Плагин публикуется через маркетплейс [`aspid-fasttools-claude`](https://github.com/VPDPersonal/Aspid.FastTools.Claude):
+Плагин публикуется через маркетплейс [`aspid-claude-plugins`](https://github.com/VPDPersonal/Aspid.Claude.Plugins):
 
 ```
-/plugin marketplace add VPDPersonal/Aspid.FastTools.Claude
-/plugin install aspid-fasttools@aspid-fasttools-claude
+/plugin marketplace add VPDPersonal/Aspid.Claude.Plugins
+/plugin install aspid-fasttools@aspid-claude-plugins
 ```
 
 ## Что внутри

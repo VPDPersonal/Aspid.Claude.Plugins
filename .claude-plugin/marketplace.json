@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "aspid-fasttools-claude",
+  "name": "aspid-claude-plugins",
   "description": "Claude Code marketplace by Vladislav Panin — plugins around the Aspid.FastTools Unity package and related Unity workflows.",
   "owner": {
     "name": "Vladislav Panin",
@@ -16,7 +16,7 @@
       },
       "category": "development",
       "source": "./plugins/aspid-fasttools",
-      "homepage": "https://github.com/VPDPersonal/Aspid.FastTools.Claude/tree/main/plugins/aspid-fasttools"
+      "homepage": "https://github.com/VPDPersonal/Aspid.Claude.Plugins/tree/main/plugins/aspid-fasttools"
     }
   ]
 }

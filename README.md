@@ -1,7 +1,7 @@
-# Aspid.FastTools.Claude
+# Aspid.Claude.Plugins
 
-[![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.FastTools.Claude?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.FastTools.Claude/releases)
-[![License](https://img.shields.io/github/license/VPDPersonal/Aspid.FastTools.Claude?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
+[![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.Claude.Plugins?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.Claude.Plugins/releases)
+[![License](https://img.shields.io/github/license/VPDPersonal/Aspid.Claude.Plugins?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
 
 [Русская версия](README_RU.md)
 
@@ -14,13 +14,13 @@ A small set of plugins built around the [**Aspid.FastTools**](https://github.com
 Add this repository as a marketplace in Claude Code:
 
 ```sh
-/plugin marketplace add VPDPersonal/Aspid.FastTools.Claude
+/plugin marketplace add VPDPersonal/Aspid.Claude.Plugins
 ```
 
 Then install a specific plugin:
 
 ```sh
-/plugin install aspid-fasttools@aspid-fasttools-claude
+/plugin install aspid-fasttools@aspid-claude-plugins
 ```
 
 Or browse the marketplace UI:
@@ -38,7 +38,7 @@ Or browse the marketplace UI:
 ## Repository layout
 
 ```
-Aspid.FastTools.Claude/
+Aspid.Claude.Plugins/
 ├── .claude-plugin/
 │   └── marketplace.json     # marketplace manifest (name, description, plugin list)
 ├── plugins/
