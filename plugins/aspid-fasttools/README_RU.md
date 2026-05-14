@@ -29,7 +29,7 @@
 
 Плагин публикуется через маркетплейс [`aspid-claude-plugins`](https://github.com/VPDPersonal/Aspid.Claude.Plugins):
 
-```
+```sh
 /plugin marketplace add VPDPersonal/Aspid.Claude.Plugins
 /plugin install aspid-fasttools@aspid-claude-plugins
 ```
@@ -51,5 +51,10 @@ plugins/aspid-fasttools/
 
 Плагин отслеживает публичный API пакета `com.aspid.fasttools`, но версионируется
 независимо. Версия `0.x` совместима со всеми версиями `com.aspid.fasttools`, которые
-экспортируют те же публичные типы (`IId`, `[UniqueId]`, `IdRegistry`, `SerializableType`,
-`EnumValues<TValue>`, `this.Marker()`, fluent-расширения `VisualElement`).
+экспортируют публичные типы, используемые текущим набором скиллов: `IId`,
+`IdRegistry`, `IdRegistry<T>`, `[UniqueId]`, глобальные расширения `this.Marker()` /
+`.WithName(...)`, а также fluent-расширения `VisualElement` в namespace
+`Aspid.FastTools.UIElements`.
+
+Прочие публичные типы пакета (`SerializableType`, `EnumValues<TValue>`, …) пока не
+покрыты ни одним скиллом в этой версии плагина.

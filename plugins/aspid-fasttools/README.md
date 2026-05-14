@@ -30,7 +30,7 @@ to do common tasks:
 
 This plugin is published through the [`aspid-claude-plugins`](https://github.com/VPDPersonal/Aspid.Claude.Plugins) marketplace:
 
-```
+```sh
 /plugin marketplace add VPDPersonal/Aspid.Claude.Plugins
 /plugin install aspid-fasttools@aspid-claude-plugins
 ```
@@ -52,5 +52,9 @@ plugins/aspid-fasttools/
 
 This plugin tracks the public API of `com.aspid.fasttools` but is versioned
 independently. A `0.x` plugin is compatible with all `com.aspid.fasttools` versions
-that expose the same public types (`IId`, `[UniqueId]`, `IdRegistry`, `SerializableType`,
-`EnumValues<TValue>`, `this.Marker()`, fluent `VisualElement` extensions).
+that expose the public types touched by the current skill set: `IId`, `IdRegistry`,
+`IdRegistry<T>`, `[UniqueId]`, the global `this.Marker()` / `.WithName(...)` extensions,
+and the fluent `VisualElement` extensions in the `Aspid.FastTools.UIElements` namespace.
+
+Other public types from the package (`SerializableType`, `EnumValues<TValue>`, …) are
+not covered by any skill in this version of the plugin yet.

@@ -31,16 +31,37 @@ public static ProfilerMarker.AutoScope Marker(this object _);
 public static ProfilerMarker.AutoScope WithName(this in ProfilerMarker.AutoScope marker, string name);
 ```
 
-At runtime the methods are never actually called. The source generator finds every
-`this.Marker()` call site and emits, in a generated partial:
+At runtime the global-namespace methods above are never actually called. For every
+enclosing type that contains `this.Marker()` call sites, the source generator emits a
+companion `internal static class __TypeNameProfilerMarkerExtensions` with:
+
+- a nested `Markers` class holding a `static readonly ProfilerMarker` per call site,
+  named `"TypeName.MethodName (Line)"` (for properties — `TypeName.PropertyName`,
+  for constructors — `TypeName.Ctor`);
+- a more specific `Marker(this TypeName _, [CallerLineNumber] int line = -1)` overload
+  that dispatches on the line number:
 
 ```csharp
-private static readonly ProfilerMarker __marker_FooBar_42 = new("FooBar (42)");
-// the call site is rewritten to:
-//   using var __ = __marker_FooBar_42.Auto();
+internal static class __FooBarProfilerMarkerExtensions
+{
+    private static class Markers
+    {
+        public static readonly ProfilerMarker UpdateGrid_42 = new("FooBar.UpdateGrid (42)");
+    }
+
+    public static ProfilerMarker.AutoScope Marker(this FooBar _, [CallerLineNumber] int line = -1)
+    {
+#if ENABLE_PROFILER
+        if (line is 42) return Markers.UpdateGrid_42.Auto();
+#endif
+        return default;
+    }
+}
 ```
 
-The marker is unique per `(EnclosingType, Method, Line)`. **Identity is line-based.**
+Because the overload is more specific than the global one, the compiler picks it
+whenever `this` is of the right enclosing type. The marker is unique per
+`(EnclosingType, Method, Line)`. **Identity is line-based.**
 
 ## Steps
 

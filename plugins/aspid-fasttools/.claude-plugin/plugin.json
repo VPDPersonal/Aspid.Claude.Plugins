@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "description": "Claude Code skills for the Aspid.FastTools Unity package (com.aspid.fasttools). Helps Claude Code generate correct UniqueId structs, ProfilerMarker call sites, and fluent VisualElement code in projects that consume the package.",
   "author": {
-    "name": "Vladislav Panin"
+    "name": "Vladislav Panin",
+    "email": "vpd.aspid@gmail.com"
   },
-  "homepage": "https://github.com/VPDPersonal/Aspid.FastTools",
+  "homepage": "https://github.com/VPDPersonal/Aspid.Claude.Plugins/tree/main/plugins/aspid-fasttools",
   "repository": "https://github.com/VPDPersonal/Aspid.Claude.Plugins",
   "license": "MIT",
   "keywords": [
@@ -13,6 +14,9 @@
     "aspid",
     "fasttools",
     "uitoolkit",
-    "source-generators"
+    "source-generators",
+    "ids",
+    "profiler",
+    "profiler-marker"
   ]
 }

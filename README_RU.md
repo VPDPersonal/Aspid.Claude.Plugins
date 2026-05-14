@@ -42,7 +42,7 @@
 
 | Плагин | Целевой пакет | Что делает |
 |---|---|---|
-| [`aspid-fasttools`](plugins/aspid-fasttools/README_RU.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Скиллы Claude Code для пакета Aspid.FastTools: создание `IId`/`[UniqueId]`-структур (`aspid-id-struct`), вставка `this.Marker()` для профайлинга (`aspid-profiler-marker`) и сборка редактор-UI на fluent-расширениях `VisualElement` (`aspid-visual-element-fluent`). |
+| [`aspid-fasttools`](plugins/aspid-fasttools/README_RU.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Скиллы Claude Code для пакета Aspid.FastTools: создание `IId`-структур и полей с `[UniqueId]` (`aspid-id-struct`), вставка `this.Marker()` для профайлинга (`aspid-profiler-marker`) и сборка editor- или runtime-UI на fluent-расширениях `VisualElement` (`aspid-visual-element-fluent`). |
 
 ### Универсальные плагины
 
@@ -59,11 +59,13 @@ Aspid.Claude.Plugins/
 │   │   ├── .claude-plugin/
 │   │   │   └── plugin.json  # метаданные плагина
 │   │   ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
+│   │   ├── CHANGELOG.md
 │   │   ├── README.md
 │   │   └── README_RU.md
 │   └── <other-plugin>/      # плагин для другого пакета Aspid или универсальный плагин для Claude Code
 ├── LICENSE
-└── README.md
+├── README.md
+└── README_RU.md
 ```
 
 ## Как добавить новый плагин

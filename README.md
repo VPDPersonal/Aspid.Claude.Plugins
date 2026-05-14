@@ -42,7 +42,7 @@ The marketplace hosts both general-purpose Claude Code plugins and plugins tied 
 
 | Plugin | Target package | What it does |
 |---|---|---|
-| [`aspid-fasttools`](plugins/aspid-fasttools/README.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Claude Code skills for the Aspid.FastTools Unity package: scaffolding `IId`/`[UniqueId]` structs (`aspid-id-struct`), inserting `this.Marker()` profiler call sites (`aspid-profiler-marker`), and building editor UI with the fluent `VisualElement` extensions (`aspid-visual-element-fluent`). |
+| [`aspid-fasttools`](plugins/aspid-fasttools/README.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Claude Code skills for the Aspid.FastTools Unity package: scaffolding `IId` structs and `[UniqueId]` fields (`aspid-id-struct`), inserting `this.Marker()` profiler call sites (`aspid-profiler-marker`), and building editor or runtime UI with the fluent `VisualElement` extensions (`aspid-visual-element-fluent`). |
 
 ### General-purpose plugins
 
@@ -59,11 +59,13 @@ Aspid.Claude.Plugins/
 │   │   ├── .claude-plugin/
 │   │   │   └── plugin.json  # plugin metadata
 │   │   ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
+│   │   ├── CHANGELOG.md
 │   │   ├── README.md
 │   │   └── README_RU.md
 │   └── <other-plugin>/      # plugin for another Aspid package or general-purpose Claude Code tooling
 ├── LICENSE
-└── README.md
+├── README.md
+└── README_RU.md
 ```
 
 ## Adding a new plugin

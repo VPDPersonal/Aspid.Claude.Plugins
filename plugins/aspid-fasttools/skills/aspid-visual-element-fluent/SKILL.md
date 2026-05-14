@@ -66,13 +66,17 @@ the chain with the subtype.
 
 ### USS classes & stylesheets — `VisualElementExtensions.Uss`
 
-`AddClass(params string[])`, `RemoveClass(params string[])`, `ToggleClass`,
-`AddStyleSheets(params StyleSheet[])`, `RemoveStyleSheets`,
-`AddStyleSheetsFromResource(params string[])`, `RemoveStyleSheetsFromResource`.
+`AddClass(string)`, `RemoveClass(string)`, `ToggleInClass(string)`,
+`EnableInClass(string className, bool enable)`, `ClearClasses()`,
+`AddStyleSheets(StyleSheet)`, `RemoveStyleSheets(StyleSheet)`,
+`AddStyleSheetsFromResource(string path)`, `RemoveStyleSheetsFromResource(string path)`.
+
+All take a **single** value — chain calls to apply multiples:
 
 ```csharp
 panel
-    .AddClass("my-panel", "my-panel--compact")
+    .AddClass("my-panel")
+    .AddClass("my-panel--compact")
     .AddStyleSheetsFromResource("UI/MyPanel/Styles");
 ```
 
@@ -145,7 +149,7 @@ file when a multi-property combination is repeated three times in the same proje
 | `BaseField<T>` | `SetLabel`, `SetValue`, `SetShowMixedValue`, `SetBindingPath` |
 | `BaseBoolField` | `SetText`, `SetValue` |
 | `EnumField` | `Init(Enum)`, `SetValue` |
-| `INotifyValueChanged<T>` | `AddValueChanged(EventCallback<ChangeEvent<T>>)`, `RemoveValueChanged`, `SetValueWithoutNotify`, `SetValue` (overloads for primitives, `string`, `Color`, `Vector2/3/4`, `Object`, plus Mathematics types via the `Aspid.FastTools.Unity.VisualElements.Math` satellite) |
+| `INotifyValueChanged<T>` | `AddValueChanged(EventCallback<ChangeEvent<T>>)`, `RemoveValueChanged`, `SetValueWithoutNotify`, `SetValue` (overloads for primitives, `string`, `Color`, `Vector2/3/4`, `Object`; Mathematics types — `float2/3/4`, `int2/3/4`, `bool2/3/4` etc. — live in the same `Aspid.FastTools.UIElements` namespace, gated by the `ASPID_FASTTOOLS_UNITY_MATHEMATICS_INTEGRATION` define) |
 | `Slider` / `SliderInt` | `SetLowValue`, `SetHighValue`, `SetDirection`, `SetPageSize`, `SetShowInputField` |
 | `ProgressBar` | `SetLowValue`, `SetHighValue`, `SetTitle`, `SetValue` |
 | `Foldout` | `SetText`, `SetValue` |
@@ -199,7 +203,7 @@ public class MyEditorWindow : EditorWindow
 |---|---|
 | `el.style.flexDirection = FlexDirection.Row;` | `el.SetFlexDirection(FlexDirection.Row);` |
 | `el.style.backgroundColor = Color.red;` | `el.SetBackgroundColor(Color.red);` |
-| `el.AddToClassList("foo"); el.AddToClassList("bar");` | `el.AddClass("foo", "bar");` |
+| `el.AddToClassList("foo"); el.AddToClassList("bar");` | `el.AddClass("foo").AddClass("bar");` |
 | `btn.clicked += OnClick;` | `btn.AddClicked(OnClick);` |
 | `field.RegisterValueChangedCallback(OnChange);` | `field.AddValueChanged(OnChange);` |
 | `el.style.marginLeft = 4; el.style.marginRight = 4;` | `el.SetMarginX(4);` |
@@ -215,7 +219,7 @@ rootVisualElement.AddChild(tree);
 
 tree.Q<Button>("submit").AddClicked(Submit);
 tree.Q<TextField>("name").AddValueChanged(OnNameChanged);
-tree.Q<VisualElement>("status").AddClass("status", "status--idle");
+tree.Q<VisualElement>("status").AddClass("status").AddClass("status--idle");
 ```
 
 `Q<>` is Unity's API; everything after it is fluent.
@@ -224,8 +228,8 @@ tree.Q<VisualElement>("status").AddClass("status", "status--idle");
 
 - **Mixing styles.** Don't write half the chain fluently and the other half via
   `element.style.X = Y` — pick one. The fluent form is preferred for new code.
-- **`AddToClassList` when `AddClass` exists.** `AddClass` accepts varargs and returns
-  the element, so it composes; `AddToClassList` does not.
+- **`AddToClassList` when `AddClass` exists.** `AddClass` returns the element, so it
+  composes; `AddToClassList` does not. For multiple classes, chain `.AddClass("a").AddClass("b")`.
 - **Building a parent then mutating children separately when a chain is shorter.**
   ```csharp
   // ❌

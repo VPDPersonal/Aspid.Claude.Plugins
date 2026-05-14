@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "aspid-claude-plugins",
-  "description": "Aspid marketplace for Claude Code — general-purpose plugins for everyday Claude Code workflows, plus companion plugins for individual Aspid packages.",
+  "description": "Aspid marketplace for Claude Code — companion plugins for individual Aspid packages (e.g. Aspid.FastTools), with general-purpose Claude Code plugins planned for future releases.",
   "owner": {
     "name": "Vladislav Panin",
     "email": "vpd.aspid@gmail.com"
@@ -9,12 +9,14 @@
   "plugins": [
     {
       "name": "aspid-fasttools",
+      "version": "0.1.0",
       "description": "Claude Code skills for the Aspid.FastTools Unity package (com.aspid.fasttools). Helps Claude Code generate correct UniqueId structs, ProfilerMarker call sites, and fluent VisualElement code in projects that consume the package.",
       "author": {
         "name": "Vladislav Panin",
         "email": "vpd.aspid@gmail.com"
       },
       "category": "development",
+      "tags": ["unity", "aspid", "fasttools", "uitoolkit", "source-generators", "ids", "profiler"],
       "source": "./plugins/aspid-fasttools",
       "homepage": "https://github.com/VPDPersonal/Aspid.Claude.Plugins/tree/main/plugins/aspid-fasttools"
     }
