@@ -5,9 +5,14 @@
 
 [English version](README.md)
 
-Личный маркетплейс плагинов для [Claude Code](https://docs.claude.com/en/docs/claude-code) от Vladislav Panin.
+Маркетплейс **Aspid** для плагинов [Claude Code](https://docs.claude.com/en/docs/claude-code).
 
-Общий маркетплейс плагинов Claude Code для семейства пакетов **Aspid** и смежных воркфлоу — не привязан к какому-то одному пакету. Каждый пакет Aspid (или универсальная утилита) может поставлять сюда свой плагин. Плагины лежат в `plugins/<имя>/`, манифест маркетплейса — в `.claude-plugin/marketplace.json`.
+Общий маркетплейс, объединяющий два типа плагинов:
+
+- **Универсальные плагины для Claude Code** — скиллы, команды, агенты и хуки, облегчающие повседневную работу в Claude Code независимо от проекта.
+- **Плагины для пакетов Aspid** — плагины-компаньоны для конкретных пакетов семейства **Aspid** (например, `Aspid.FastTools`), которые учат Claude Code правилам и API каждого пакета.
+
+Плагины лежат в `plugins/<имя>/`, манифест маркетплейса — в `.claude-plugin/marketplace.json`.
 
 ## Установка
 
@@ -31,11 +36,17 @@
 
 ## Плагины
 
-В маркетплейсе живут плагины для любых пакетов Aspid (и смежного универсального тулинга для Claude Code). Список будет расти по мере появления плагинов для новых пакетов.
+В маркетплейсе живут как универсальные плагины для Claude Code, так и плагины для конкретных пакетов Aspid. Список будет пополняться.
+
+### Плагины для пакетов Aspid
 
 | Плагин | Целевой пакет | Что делает |
 |---|---|---|
 | [`aspid-fasttools`](plugins/aspid-fasttools/README_RU.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Скиллы Claude Code для пакета Aspid.FastTools: создание `IId`/`[UniqueId]`-структур (`aspid-id-struct`), вставка `this.Marker()` для профайлинга (`aspid-profiler-marker`) и сборка редактор-UI на fluent-расширениях `VisualElement` (`aspid-visual-element-fluent`). |
+
+### Универсальные плагины
+
+_Пока нет — скоро появятся._
 
 ## Структура репозитория
 
@@ -50,7 +61,7 @@ Aspid.Claude.Plugins/
 │   │   ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
 │   │   ├── README.md
 │   │   └── README_RU.md
-│   └── <other-plugin>/      # плагины для других пакетов Aspid или универсального тулинга
+│   └── <other-plugin>/      # плагин для другого пакета Aspid или универсальный плагин для Claude Code
 ├── LICENSE
 └── README.md
 ```

@@ -5,9 +5,14 @@
 
 [Русская версия](README_RU.md)
 
-Personal [Claude Code](https://docs.claude.com/en/docs/claude-code) marketplace by Vladislav Panin.
+The **Aspid** marketplace for [Claude Code](https://docs.claude.com/en/docs/claude-code) plugins.
 
-A shared marketplace for Claude Code plugins across the **Aspid** package family and adjacent workflows — not tied to any single package. Each Aspid package (or general-purpose tooling) can ship its own plugin here. Plugins live in `plugins/<name>/`; the marketplace manifest is at `.claude-plugin/marketplace.json`.
+A shared marketplace that bundles two kinds of plugins:
+
+- **General-purpose Claude Code plugins** — skills, commands, agents and hooks that make day-to-day work in Claude Code faster, regardless of project.
+- **Aspid package plugins** — companion plugins for individual packages from the **Aspid** family (e.g. `Aspid.FastTools`), teaching Claude Code about each package's conventions and APIs.
+
+Plugins live in `plugins/<name>/`; the marketplace manifest is at `.claude-plugin/marketplace.json`.
 
 ## Installation
 
@@ -31,11 +36,17 @@ Or browse the marketplace UI:
 
 ## Plugins
 
-The marketplace hosts plugins for any Aspid package (and related general-purpose Claude Code tooling). The list grows as new packages get their own plugin.
+The marketplace hosts both general-purpose Claude Code plugins and plugins tied to specific Aspid packages. The list grows over time.
+
+### Aspid package plugins
 
 | Plugin | Target package | What it does |
 |---|---|---|
 | [`aspid-fasttools`](plugins/aspid-fasttools/README.md) | [Aspid.FastTools](https://github.com/VPDPersonal/Aspid.FastTools) | Claude Code skills for the Aspid.FastTools Unity package: scaffolding `IId`/`[UniqueId]` structs (`aspid-id-struct`), inserting `this.Marker()` profiler call sites (`aspid-profiler-marker`), and building editor UI with the fluent `VisualElement` extensions (`aspid-visual-element-fluent`). |
+
+### General-purpose plugins
+
+_None yet — coming soon._
 
 ## Repository layout
 
@@ -50,7 +61,7 @@ Aspid.Claude.Plugins/
 │   │   ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
 │   │   ├── README.md
 │   │   └── README_RU.md
-│   └── <other-plugin>/      # plugins for other Aspid packages or general tooling
+│   └── <other-plugin>/      # plugin for another Aspid package or general-purpose Claude Code tooling
 ├── LICENSE
 └── README.md
 ```
