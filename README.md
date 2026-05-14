@@ -1,58 +1,64 @@
-# Aspid.FastTools.Claude — Claude Code plugin
+# Aspid.FastTools.Claude
 
 [![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.FastTools.Claude?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.FastTools.Claude/releases)
 [![License](https://img.shields.io/github/license/VPDPersonal/Aspid.FastTools.Claude?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
 
 [Русская версия](README_RU.md)
 
-> **Alpha (`0.1.0`)** — skill triggers, descriptions and structure may change between
-> minor versions as real-world usage feedback comes in. Pin a specific commit or tag
-> if you need stability.
+Personal [Claude Code](https://docs.claude.com/en/docs/claude-code) marketplace by Vladislav Panin.
 
-A Claude Code plugin that helps Claude Code work correctly with the
-[**Aspid.FastTools**](https://github.com/VPDPersonal/Aspid.FastTools) Unity package
-(`com.aspid.fasttools`) inside your own Unity projects.
-
-The plugin ships **3 skills** that activate automatically when you ask Claude Code
-to do common tasks:
-
-| Skill | Triggers on requests like |
-|---|---|
-| `aspid-id-struct` | "create an id struct", "add `[UniqueId]` to X", "make X a project-wide id" |
-| `aspid-profiler-marker` | "profile this method", "add `this.Marker()`", "instrument with ProfilerMarker" |
-| `aspid-visual-element-fluent` | "build editor UI with UIToolkit", "use fluent `VisualElement`", "style this `VisualElement`" |
-
-## Requirements
-
-- Unity 2022.3+
-- The Aspid.FastTools package installed in your project (`com.aspid.fasttools`)
+A small set of plugins built around the [**Aspid.FastTools**](https://github.com/VPDPersonal/Aspid.FastTools) Unity package and related Unity workflows. Plugins live in `plugins/<name>/`; the marketplace manifest is at `.claude-plugin/marketplace.json`.
 
 ## Installation
 
-```
-/plugin install github:VPDPersonal/Aspid.FastTools.Claude
+Add this repository as a marketplace in Claude Code:
+
+```sh
+/plugin marketplace add VPDPersonal/Aspid.FastTools.Claude
 ```
 
-## What's inside
+Then install a specific plugin:
+
+```sh
+/plugin install aspid-fasttools@aspid-fasttools-claude
+```
+
+Or browse the marketplace UI:
+
+```sh
+/plugin
+```
+
+## Plugins
+
+| Plugin | What it does |
+|---|---|
+| [`aspid-fasttools`](plugins/aspid-fasttools/README.md) | Claude Code skills for the Aspid.FastTools Unity package: scaffolding `IId`/`[UniqueId]` structs (`aspid-id-struct`), inserting `this.Marker()` profiler call sites (`aspid-profiler-marker`), and building editor UI with the fluent `VisualElement` extensions (`aspid-visual-element-fluent`). |
+
+## Repository layout
 
 ```
 Aspid.FastTools.Claude/
-├── .claude-plugin/plugin.json
-├── README.md
-├── README_RU.md
-└── skills/
-    ├── aspid-id-struct/SKILL.md
-    ├── aspid-profiler-marker/SKILL.md
-    └── aspid-visual-element-fluent/SKILL.md
+├── .claude-plugin/
+│   └── marketplace.json     # marketplace manifest (name, description, plugin list)
+├── plugins/
+│   └── aspid-fasttools/
+│       ├── .claude-plugin/
+│       │   └── plugin.json  # plugin metadata
+│       ├── skills/          # aspid-id-struct, aspid-profiler-marker, aspid-visual-element-fluent
+│       ├── README.md
+│       └── README_RU.md
+├── LICENSE
+└── README.md
 ```
 
-## Versioning
+## Adding a new plugin
 
-This plugin tracks the public API of `com.aspid.fasttools` but is versioned
-independently. A `0.x` plugin is compatible with all `com.aspid.fasttools` versions
-that expose the same public types (`IId`, `[UniqueId]`, `IdRegistry`, `SerializableType`,
-`EnumValues<TValue>`, `this.Marker()`, fluent `VisualElement` extensions).
+1. Create `plugins/<name>/.claude-plugin/plugin.json` with `name`, `description`, `author`.
+2. Add `skills/<skill>/SKILL.md`, `commands/<cmd>.md`, `agents/<agent>.md`, or `hooks/` as needed.
+3. Add a `README.md` in the plugin directory.
+4. Register the plugin in `.claude-plugin/marketplace.json` under the `plugins` array — set `"source": "./plugins/<name>"` for in-repo plugins.
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
