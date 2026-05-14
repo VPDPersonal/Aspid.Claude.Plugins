@@ -1,7 +1,6 @@
 # aspid-fasttools — плагин для Claude Code
 
 [![Releases](https://img.shields.io/github/v/release/VPDPersonal/Aspid.Claude.Plugins?label=Release&labelColor=254d2c&color=4fa35d&include_prereleases&sort=semver)](https://github.com/VPDPersonal/Aspid.Claude.Plugins/releases)
-[![License](https://img.shields.io/github/license/VPDPersonal/Aspid.Claude.Plugins?label=License&labelColor=254d2c&color=4fa35d)](LICENSE)
 
 [English version](README.md)
 
@@ -54,7 +53,3 @@ plugins/aspid-fasttools/
 независимо. Версия `0.x` совместима со всеми версиями `com.aspid.fasttools`, которые
 экспортируют те же публичные типы (`IId`, `[UniqueId]`, `IdRegistry`, `SerializableType`,
 `EnumValues<TValue>`, `this.Marker()`, fluent-расширения `VisualElement`).
-
-## Лицензия
-
-MIT
