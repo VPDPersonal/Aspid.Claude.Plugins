@@ -1,24 +1,70 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "aspid-claude-plugins",
-  "description": "Aspid marketplace for Claude Code — companion plugins for individual Aspid packages (e.g. Aspid.FastTools), with general-purpose Claude Code plugins planned for future releases.",
+  "description": "Aspid marketplace for Claude Code — companion plugins for Aspid packages. Aspid.FastTools skills now ship in the Aspid.FastTools repository.",
   "owner": {
     "name": "Vladislav Panin",
     "email": "vpd.aspid@gmail.com"
   },
   "plugins": [
     {
-      "name": "aspid-fasttools",
-      "version": "0.2.0-alpha",
-      "description": "Claude Code skills for the Aspid.FastTools Unity package (com.aspid.fasttools). Helps Claude Code generate correct UniqueId structs, ProfilerMarker call sites, and fluent VisualElement code in projects that consume the package.",
+      "name": "aspid-mvvm",
+      "version": "0.1.0-alpha",
+      "description": "Claude Code skills for the Aspid.MVVM Unity package (tech.aspid.mvvm). Helps Claude Code generate correct ViewModel classes, data bindings, and relay commands in projects that consume the package.",
       "author": {
         "name": "Vladislav Panin",
         "email": "vpd.aspid@gmail.com"
       },
       "category": "development",
-      "tags": ["unity", "aspid", "fasttools", "uitoolkit", "source-generators", "ids", "profiler"],
-      "source": "./plugins/aspid-fasttools",
-      "homepage": "https://github.com/VPDPersonal/Aspid.Claude.Plugins/tree/main/plugins/aspid-fasttools"
+      "tags": [
+        "unity",
+        "aspid",
+        "mvvm",
+        "source-generators",
+        "viewmodel",
+        "databinding"
+      ],
+      "source": "./plugins/aspid-mvvm",
+      "homepage": "https://github.com/VPDPersonal/Aspid.Claude.Plugins/tree/main/plugins/aspid-mvvm"
+    },
+    {
+      "name": "aspid-collections",
+      "version": "0.1.0-alpha",
+      "description": "Claude Code skills for the Aspid.Collections Unity package (tech.aspid.collections). Helps Claude Code generate correct observable collection usage with proper ownership, event handling, and synchronization patterns.",
+      "author": {
+        "name": "Vladislav Panin",
+        "email": "vpd.aspid@gmail.com"
+      },
+      "category": "development",
+      "tags": [
+        "unity",
+        "aspid",
+        "collections",
+        "observable",
+        "reactive"
+      ],
+      "source": "./plugins/aspid-collections",
+      "homepage": "https://github.com/VPDPersonal/Aspid.Claude.Plugins/tree/main/plugins/aspid-collections"
+    },
+    {
+      "name": "aspid-unity-package",
+      "version": "0.1.0-alpha",
+      "description": "Claude Code skills for creating Unity packages following Aspid conventions — UPM samples with EN/RU README pairs, assembly definitions with correct references, and standard package structure.",
+      "author": {
+        "name": "Vladislav Panin",
+        "email": "vpd.aspid@gmail.com"
+      },
+      "category": "development",
+      "tags": [
+        "unity",
+        "aspid",
+        "upm",
+        "package",
+        "samples",
+        "asmdef"
+      ],
+      "source": "./plugins/aspid-unity-package",
+      "homepage": "https://github.com/VPDPersonal/Aspid.Claude.Plugins/tree/main/plugins/aspid-unity-package"
     }
   ]
 }
